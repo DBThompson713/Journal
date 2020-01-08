@@ -6,10 +6,8 @@ class HomePage extends Component {
     return (
       <>
         <h1>Home</h1>
-        <Link to="category">
-          <button>
-            <h1>Whatcha Journalling?</h1>
-          </button>
+        <Link to="/category">
+          <button>Select A Category</button>
         </Link>
       </>
     );

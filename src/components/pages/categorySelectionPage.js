@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 class CategorySelectionPage extends Component {
   render() {
     const { categories } = this.props;
+
     return (
       <>
-        <h1>Whatcha Journalling about today??</h1>
+        <h1>What do you want to write about?</h1>
         <ul>
           {categories.map((category, index) => {
             return (
               <li key={category}>
-                <Link to="/entry">{category}</Link>
+                <Link to={`/entry/new/${index}`}>{category}</Link>
               </li>
             );
           })}
@@ -19,6 +20,7 @@ class CategorySelectionPage extends Component {
       </>
     );
   }
+
   static defaultProps = {
     categories: []
   };
