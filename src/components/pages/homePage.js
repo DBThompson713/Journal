@@ -7,7 +7,9 @@ class HomePage extends Component {
       <>
         <h1>Home</h1>
         <Link to="category">
-          <button>Whatcha Journalling?</button>
+          <button>
+            <h1>Whatcha Journalling?</h1>
+          </button>
         </Link>
       </>
     );

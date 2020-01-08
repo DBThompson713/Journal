@@ -5,7 +5,10 @@ import NewEntryPage from "./pages/newEntryPage";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 class App extends Component {
+  state = { categories: ["Personal", "Travel", "Dating"] };
+
   render() {
+    const { categories } = this.state;
     return (
       <div>
         <BrowserRouter>
@@ -15,8 +18,15 @@ class App extends Component {
             <Link to="/category"> Category Selection </Link>
 
             <Route exact path="/" component={HomePage} />
-
-            <Route exact path="/category" component={CategorySelectionPage} />
+            <Route
+              exact
+              path="/category"
+              render={props => {
+                return (
+                  <CategorySelectionPage {...props} categories={categories} />
+                );
+              }}
+            />
             <Route exact path="/entry" component={NewEntryPage} />
           </>
         </BrowserRouter>
